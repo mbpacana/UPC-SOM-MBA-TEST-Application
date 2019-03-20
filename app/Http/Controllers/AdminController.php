@@ -15,8 +15,14 @@ class AdminController extends Controller
     public function answers(){
         return view('admin.answers');
     }
+    public function instructions(){
+        return view('pages.instructions');
+    }
     public function stashes(){
         return view('admin.stashes');
+    }
+    public function exam(){
+        return view('pages.exam');
     }
     public function questionnaire(){
         return view('admin.questionnaire');

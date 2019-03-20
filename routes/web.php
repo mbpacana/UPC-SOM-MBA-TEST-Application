@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/home','AdminController@index');
 Route::get('/login','AdminController@login');
-Route::get('/{id}/exam',function($id){
-    return 'This is user with id of '.$id;
-});
+Route::get('/authentication','AdminController@login');
+Route::get('/instructions','AdminController@instructions');
+Route::get('/exam','AdminController@exam');
+Route::get('/admin','AdminController@home');
 Route::get('/admin/answers','AdminController@answers');
 Route::get('/admin/stashes','AdminController@stashes');
-Route::get('/admin/questionnaire','AdminController@questionnaire');
+Route::get('/admin/questions','AdminController@questions');
+
+Route::resource('questions','AdminController');

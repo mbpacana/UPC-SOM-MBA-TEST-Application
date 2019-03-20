@@ -1,18 +1,15 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <title>{{config('app.name','TESTAPP')}}</title>
     </head>
     <body>
+        @include('inc.navbar')
         <div class="container">
+            <br><br>
             @yield('content')
         </div>
-        <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
-        <script>
-            CKEDITOR.replace( 'summary-ckeditor' );
-        </script>
     </body>
 </html>

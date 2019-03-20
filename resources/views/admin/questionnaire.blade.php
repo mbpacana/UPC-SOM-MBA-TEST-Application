@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Questionnaire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <p>Questionnaire</p>
-</body>
-</html>
+    @if(count($questions) > 1)
+        @foreach($questions as $quest)
+            <div class="well">
+                <h3>{{$quest->question}}</h3>
+            <small>{{$quest->questionType}}</small>
+        @endforeach
+    @endif
+@endsection
